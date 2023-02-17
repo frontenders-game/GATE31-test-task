@@ -7,11 +7,12 @@
 }
 
 body {
+    min-width: 340px;
+    color: #3f444a;
     background-color: #edeef3;
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 400;
-    color: #3f444a;
     padding: 0 20px;
 }
 
@@ -34,7 +35,6 @@ body {
     margin-bottom: 4px;
 }
 
-
 .header__form {
     font-weight: 600;
     display: flex;
@@ -47,7 +47,6 @@ body {
     max-width: 800px;
     width: 100%;
 }
-
 
 .header__input {
     color: #54595e;
@@ -143,5 +142,11 @@ body {
 @media (max-width: 767px) {
     .main-wrapper {
         grid-template-columns: repeat(1, 300px);
+    }
+    .header-wrapper {
+        padding: 10px;
+    }
+    .header__title {
+        font-size: 30px;
     }
 }
