@@ -13,13 +13,12 @@ let data;
 try {
     data = await getPostsData()
     console.log('Successfully loaded posts from api.')
-
 } catch {
     console.warn('Couldn\'t get posts json from server. Using local copy.')
     data = dataLocal
-
 }
-// function to create deepCopy of data
+
+// create deepCopy of data
 const deepCopy = arr => arr.map(postObj => Object.assign({}, postObj));
 // create local copy
 const allPosts = deepCopy(data)

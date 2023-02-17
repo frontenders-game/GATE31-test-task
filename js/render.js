@@ -9,9 +9,8 @@ const selectedText = document.querySelector('.header__selected')
 
 const filterData = function () {
     const currentState = readState()
-    return (currentState.filter)
-        ? allPosts.filter(item => item.title.includes(currentState.filter))
-        : allPosts
+    if (!currentState.filter) return allPosts
+    return allPosts.filter(item => item.title.toLowerCase().includes(currentState.filter))
 }
 
 const updateSelected = function () {
