@@ -1,12 +1,12 @@
 const TODO_LS_KEY = 'blogTask'
 const saveState = function (stateObj) {
-    localStorage.setItem(TODO_LS_KEY, JSON.stringify(stateObj));
-    return JSON.stringify(stateObj)
+    const json = JSON.stringify(stateObj)
+    localStorage.setItem(TODO_LS_KEY, json);
+    return json
 }
 const readState = function () {
     const lsState = localStorage.getItem(TODO_LS_KEY)
     const data = lsState ?? saveState({filter: "", selected: []})
-    console.log(data)
     return JSON.parse(data)
 }
 
