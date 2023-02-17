@@ -8,20 +8,15 @@ const input = document.querySelector('.header__input')
 const postsContainer = document.querySelector('div.main-wrapper')
 
 
-let data;
+let allPosts;
 
 try {
-    data = await getPostsData()
+    allPosts = await getPostsData()
     console.log('Successfully loaded posts from api.')
 } catch {
     console.warn('Couldn\'t get posts json from server. Using local copy.')
-    data = dataLocal
+    allPosts = dataLocal
 }
-
-// create deepCopy of data
-const deepCopy = arr => arr.map(postObj => Object.assign({}, postObj));
-// create local copy
-const allPosts = deepCopy(data)
 
 
 export {
