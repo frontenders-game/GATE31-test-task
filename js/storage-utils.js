@@ -3,9 +3,8 @@ const saveState = function (stateObj) {
     localStorage.setItem(TODO_LS_KEY, JSON.stringify(stateObj));
     return stateObj
 }
-
-const saveBlankState = () => saveState({filter: "", selected: []})
-const readState = () => JSON.parse(localStorage.getItem(TODO_LS_KEY) ?? saveBlankState())
+const readState = () => JSON.parse(
+    localStorage.getItem(TODO_LS_KEY) ?? saveState({filter: "", selected: []}))
 
 const writeFilter = function (filterString) {
     const currentState = readState()
